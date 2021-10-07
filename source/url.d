@@ -1,29 +1,28 @@
 /**
-	* A URL handling library.
-	*
-	* URLs are Unique Resource Locators. They consist of a scheme and a host, with some optional
-	* elements like port, path, username, and password.
-	*
-	* This module aims to make it simple to muck about with them.
-	*
-	* Example usage:
-	* ---
-	* auto url = "ssh://me:password@192.168.0.8/".parseURL;
-	* auto files = system("ssh", url.toString, "ls").splitLines;
-	* foreach (file; files) {
-	*		system("scp", url ~ file, ".");
-	* }
-	* ---
-	*
-	* License: The MIT license.
-	*/
+ * A URL handling library.
+ *
+ * URLs are Unique Resource Locators. They consist of a scheme and a host, with some optional
+ * elements like port, path, username, and password.
+ *
+ * This module aims to make it simple to muck about with them.
+ *
+ * Example usage:
+ * ---
+ * auto url = "ssh://me:password@192.168.0.8/".parseURL;
+ * auto files = system("ssh", url.toString, "ls").splitLines;
+ * foreach (file; files) {
+ *		system("scp", url ~ file, ".");
+ * }
+ * ---
+ *
+ * License: The MIT license.
+ */
 module url;
 
 import std.conv;
 import std.string;
 
-pure:
-@safe:
+pure @safe:
 
 /// An exception thrown when something bad happens with URLs.
 class URLException : Exception

@@ -5,3 +5,4 @@ docs/
 __dummy.html
 liburld.a
 *.swp
+/dub.selections.json
